@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Morya Drawing Classes | By Vipul Swami - Premier Art Institute Pune</title>
+    <!-- Google Fonts + Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFFCF5;
+            color: #1E1A17;
+            scroll-behavior: smooth;
+            line-height: 1.4;
+        }
+
+        h1, h2, h3, .logo, .nav-links, .section-title, .stat-number, .review-name, .btn {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Luxury Vibe: warm tones, gold accents, soft shadows */
+        :root {
+            --gold: #C6A43F;
+            --gold-light: #E4C87B;
+            --deep-burgundy: #3E2A2A;
+            --charcoal: #2C2826;
+            --warm-cream: #FFF9EF;
+            --sand: #F2E8DA;
+            --shadow-sm: 0 10px 30px -12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 25px 40px -12px rgba(0,0,0,0.15);
+            --instagram: #E4405F;
+            --youtube: #FF0000;
+            --facebook: #1877F2;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 249, 239, 0.96);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(198, 164, 63, 0.25);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.02);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #2C2A24 0%, #C6A43F 90%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .logo p {
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: #7F6B4A;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2C2826;
+            transition: 0.2s ease;
+            font-size: 1rem;
+        }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        .social-nav {
+            display: flex;
+            gap: 1rem;
+            margin-left: 1rem;
+        }
+        .social-nav a {
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+        .social-nav a:hover {
+            transform: translateY(-2px);
+        }
+        .social-nav .fa-instagram:hover { color: var(--instagram); }
+        .social-nav .fa-youtube:hover { color: var(--youtube); }
+        .social-nav .fa-facebook:hover { color: var(--facebook); }
+        
+        .btn-nav-cta {
+            background: var(--gold);
+            padding: 8px 24px;
+            border-radius: 40px;
+            color: #1E1A17 !important;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .btn-nav-cta:hover {
+            background: #B48F2E;
+            color: white !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(105deg, #FFF9EF 0%, #FCF3E4 100%);
+            padding: 70px 0 90px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero:before {
+            content: "✧";
+            font-size: 300px;
+            opacity: 0.04;
+            position: absolute;
+            bottom: -60px;
+            right: -40px;
+            font-family: serif;
+            pointer-events: none;
+        }
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 48px;
+        }
+        .hero-content {
+            flex: 1.2;
+        }
+        .hero-badge {
+            background: rgba(198,164,63,0.15);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #9B7A36;
+            margin-bottom: 20px;
+            backdrop-filter: blur(2px);
+        }
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: #231F1B;
+        }
+        .hero-content h1 span {
+            color: var(--gold);
+            font-weight: 800;
+        }
+        .marathi-tag {
+            font-size: 1.3rem;
+            color: #5E4B34;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--gold);
+            padding-left: 20px;
+            font-weight: 400;
+        }
+        .rating-hero {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+        .stars {
+            color: var(--gold);
+            letter-spacing: 3px;
+            font-size: 1.2rem;
+        }
+        .review-count {
+            font-weight: 600;
+            background: white;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .hero-desc {
+            font-size: 1.12rem;
+            color: #3B3530;
+            max-width: 90%;
+            margin: 20px 0 32px;
+            line-height: 1.5;
+        }
+        .btn-group {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: var(--charcoal);
+            padding: 14px 34px;
+            border-radius: 44px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            transition: all 0.25s;
+            display: inline-block;
+            border: 1px solid transparent;
+        }
+        .btn-primary:hover {
+            background: var(--gold);
+            color: #1E1A17;
+            transform: translateY(-3px);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--gold);
+            color: #2C2826;
+            padding: 14px 34px;
+            border-radius: 44px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .btn-outline:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+        .hero-visual {
+            flex: 0.9;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle cx="200" cy="200" r="190" fill="%23F2E3CE" /><path d="M140 160 L200 120 L260 160 L260 240 L200 280 L140 240 Z" fill="%23C6A43F" opacity="0.7"/><circle cx="200" cy="200" r="45" fill="%23FFF9EF" stroke="%23C6A43F" stroke-width="4"/><path d="M200 170 L210 195 L237 195 L216 212 L224 238 L200 222 L176 238 L184 212 L163 195 L190 195 Z" fill="%23EAD19C"/></svg>') no-repeat center;
+            background-size: contain;
+            min-height: 340px;
+            position: relative;
+        }
+        /* info bar */
+        .info-banner {
+            background: white;
+            border-radius: 28px;
+            padding: 24px 32px;
+            box-shadow: var(--shadow-lg);
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid rgba(198,164,63,0.3);
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .info-item i {
+            font-size: 1.7rem;
+            color: var(--gold);
+        }
+        .info-text h4 {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #6B5A48;
+        }
+        .info-text p {
+            font-weight: 700;
+            color: #1E1A17;
+        }
+
+        /* sections */
+        section {
+            padding: 90px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .section-sub {
+            text-align: center;
+            color: #7A6A58;
+            max-width: 600px;
+            margin: 0 auto 56px;
+            font-size: 1.1rem;
+        }
+        .gold-underline {
+            width: 70px;
+            height: 3px;
+            background: var(--gold);
+            margin: 16px auto 32px;
+            border-radius: 4px;
+        }
+
+        /* about */
+        .about-grid {
+            display: flex;
+            gap: 56px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .signature {
+            margin-top: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--gold);
+        }
+        .about-stats {
+            flex: 0.6;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            background: var(--warm-cream);
+            padding: 36px;
+            border-radius: 48px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        /* classes grid */
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 36px;
+            margin-top: 30px;
+        }
+        .class-card {
+            background: white;
+            border-radius: 32px;
+            padding: 32px 24px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            text-align: center;
+            border-bottom: 3px solid transparent;
+        }
+        .class-card:hover {
+            transform: translateY(-8px);
+            border-bottom-color: var(--gold);
+            box-shadow: var(--shadow-lg);
+        }
+        .class-icon {
+            font-size: 2.8rem;
+            background: #F8EFE1;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            margin: 0 auto 20px;
+            color: var(--gold);
+        }
+
+        /* Social Media Section */
+        .social-media-section {
+            background: linear-gradient(135deg, #2C2826 0%, #1E1A17 100%);
+            color: white;
+            border-radius: 48px;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        .social-icons-large {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 40px 0 20px;
+        }
+        .social-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px 35px;
+            border-radius: 60px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .social-card i {
+            font-size: 2rem;
+        }
+        .social-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+        .social-card.youtube:hover { box-shadow: 0 10px 25px rgba(255,0,0,0.3); }
+        .social-card.instagram:hover { box-shadow: 0 10px 25px rgba(228,64,95,0.3); }
+        .social-card.facebook:hover { box-shadow: 0 10px 25px rgba(24,119,242,0.3); }
+        .social-followers {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+
+        /* Reviews */
+        .reviews-slider {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .review-card {
+            background: white;
+            flex: 1;
+            min-width: 280px;
+            border-radius: 28px;
+            padding: 28px;
+            box-shadow: var(--shadow-sm);
+            transition: 0.2s;
+        }
+        .review-stars {
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .review-text {
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.5;
+            margin: 16px 0;
+            color: #2C2826;
+        }
+        .reviewer {
+            font-weight: 700;
+            margin-top: 12px;
+            border-top: 1px solid #ECE3D4;
+            padding-top: 12px;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+            margin-top: 40px;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.35s ease;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 20px 16px 12px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            color: white;
+            font-weight: 500;
+            text-align: center;
+            backdrop-filter: blur(4px);
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .maps-link-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(198,164,63,0.9);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #1E1A17;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        /* Location */
+        .location-section {
+            background: var(--sand);
+        }
+        .location-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            border-radius: 36px;
+            overflow: hidden;
+            background: white;
+            box-shadow: var(--shadow-lg);
+        }
+        .map-container {
+            flex: 1.2;
+            min-height: 360px;
+            background: #EADFCB;
+        }
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background: #E7DBC8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #7A6242;
+        }
+        .address-details {
+            flex: 0.9;
+            padding: 36px 28px;
+        }
+        .direction-link {
+            display: inline-flex;
+            background: var(--gold);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #1E1A17;
+            margin-top: 20px;
+            gap: 8px;
+            align-items: center;
+        }
+
+        /* CTA banner */
+        .cta-banner {
+            background: linear-gradient(115deg, #2C2826 0%, #3A3028 100%);
+            border-radius: 56px;
+            padding: 68px 48px;
+            text-align: center;
+            color: white;
+        }
+        .cta-banner h2 {
+            font-size: 2.4rem;
+            margin-bottom: 16px;
+        }
+        .btn-cta {
+            background: var(--gold);
+            padding: 14px 38px;
+            border-radius: 50px;
+            font-weight: 700;
+            color: #1E1A17;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-top: 24px;
+            transition: 0.2s;
+        }
+
+        /* footer */
+        footer {
+            background: #12100E;
+            color: #CCC4B8;
+            padding: 48px 0 24px;
+        }
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .footer-logo h3 {
+            color: var(--gold);
+            font-size: 1.7rem;
+        }
+        .footer-social a {
+            color: #C6B594;
+            margin-right: 20px;
+            font-size: 1.6rem;
+            transition: 0.2s;
+            display: inline-block;
+        }
+        .footer-social a:hover { transform: translateY(-3px); }
+        .footer-social .fa-instagram:hover { color: var(--instagram); }
+        .footer-social .fa-youtube:hover { color: var(--youtube); }
+        .footer-social .fa-facebook:hover { color: var(--facebook); }
+        .copyright {
+            text-align: center;
+            margin-top: 48px;
+            font-size: 0.8rem;
+            border-top: 1px solid #2A241F;
+            padding-top: 28px;
+        }
+
+        @media (max-width: 900px) {
+            .nav-container { flex-direction: column; gap: 14px; }
+            .nav-links { gap: 1rem; justify-content: center; }
+            .social-nav { margin-left: 0; }
+            .hero-content h1 { font-size: 2.6rem; }
+            .hero-grid { flex-direction: column; }
+            .container { padding: 0 24px; }
+            .section-title { font-size: 2rem; }
+            .social-card { padding: 15px 25px; font-size: 1rem; }
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: #25D366;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            z-index: 99;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover { transform: scale(1.05); background: #1DA15E; }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <h2>Morya Drawings</h2>
+            <p>by Vipul Swami Arts</p>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#classes">Programs</a>
+            <a href="#gallery-section">Gallery</a>
+            <a href="#reviews">Reviews</a>
+            <div class="social-nav">
+                <a href="#" id="youtubeNav" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="#" id="instagramNav" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" id="facebookNav" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+            <a href="#contact" class="btn-nav-cta">Enquire Now</a>
+        </div>
+    </div>
+</div>
+
+<main id="home">
+    <!-- Hero -->
+    <div class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-palette"></i> Since 2015 • Award-Winning Artist</div>
+                <h1>Shape Your Imagination <br> With <span>Vipul Swami</span></h1>
+                <div class="marathi-tag">मोरया ड्राइंग & पेंटिंग क्लासेज</div>
+                <div class="rating-hero">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-count"><i class="fas fa-star" style="color: #C6A43F;"></i> 5.0 · (7 Google Reviews)</div>
+                </div>
+                <p class="hero-desc">Premium art classes for all ages, from foundational drawing to advanced painting techniques. Learn under expert guidance of Vipul Swami — an artistic visionary with years of teaching excellence.</p>
+                <div class="btn-group">
+                    <a href="#contact" class="btn-primary">Start Your Journey →</a>
+                    <a href="#classes" class="btn-outline">Explore Courses</a>
+                </div>
+            </div>
+            <div class="hero-visual"></div>
+        </div>
+        <div class="container">
+            <div class="info-banner">
+                <div class="info-item"><i class="fas fa-map-marker-alt"></i><div class="info-text"><h4>Location</h4><p>Shridharnagar, near Dhekne hospital, opp. Elpro School, Chinchwad Gaon, Pune</p></div></div>
+                <div class="info-item"><i class="far fa-clock"></i><div class="info-text"><h4>Class Timings</h4><p>Opens 5 PM Tue–Sun | Mon Closed</p></div></div>
+                <div class="info-item"><i class="fas fa-phone-alt"></i><div class="info-text"><h4>Contact</h4><p>+91 9822012345 (Call for Demo)</p></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">About <span style="color:#C6A43F;">Vipul Swami</span></div>
+            <div class="gold-underline"></div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Where passion meets mastery</h3>
+                    <p>Vipul Swami is a celebrated fine artist and educator with over 8+ years of experience nurturing young talents and adults. His teaching style blends traditional techniques with creative expression, ensuring every student finds their unique artistic voice. As the founder of Morya Drawing & Painting Classes, Vipul Sir has mentored hundreds of successful students, art competition winners, and aspiring designers.</p>
+                    <p class="signature">"Art is not what you see, but what you make others see." — Vipul Swami</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat"><div class="stat-number">500+</div><div>Students Trained</div></div>
+                    <div class="stat"><div class="stat-number">28+</div><div>Art Awards</div></div>
+                    <div class="stat"><div class="stat-number">100%</div><div>Positive Feedback</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL MEDIA SECTION - NEW -->
+    <section>
+        <div class="container">
+            <div class="social-media-section">
+                <i class="fas fa-share-alt" style="font-size: 2rem; color: var(--gold); margin-bottom: 1rem; display: inline-block;"></i>
+                <h2 style="font-size: 2rem;">Follow Vipul Sir's <span style="color: var(--gold);">Art Journey</span></h2>
+                <div class="gold-underline" style="background: var(--gold);"></div>
+                <p style="opacity: 0.9; max-width: 600px; margin: 0 auto;">Daily art inspiration, tutorials, student showcases, and behind-the-scenes from the studio.</p>
+                
+                <div class="social-icons-large">
+                    <a href="#" id="youtubeCard" class="social-card youtube" target="_blank">
+                        <i class="fab fa-youtube"></i> 
+                        <span>Subscribe on YouTube</span>
+                    </a>
+                    <a href="#" id="instagramCard" class="social-card instagram" target="_blank">
+                        <i class="fab fa-instagram"></i> 
+                        <span>Follow on Instagram</span>
+                    </a>
+                    <a href="#" id="facebookCard" class="social-card facebook" target="_blank">
+                        <i class="fab fa-facebook"></i> 
+                        <span>Like on Facebook</span>
+                    </a>
+                </div>
+                <div class="social-followers">
+                    <i class="fas fa-video"></i> Art tutorials • Student spotlights • Live sessions
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs -->
+    <section id="classes" style="background: #FEFAF2;">
+        <div class="container">
+            <div class="section-title">Our <span style="color:#C6A43F;">Master Programs</span></div>
+            <div class="section-sub">Structured curriculum for kids, teens & adults | Weekly batches</div>
+            <div class="classes-grid">
+                <div class="class-card"><div class="class-icon"><i class="fas fa-pencil-ruler"></i></div><h3>Foundation Drawing</h3><p>Shading, perspective, still life, and sketching fundamentals.</p></div>
+                <div class="class-card"><div class="class-icon"><i class="fas fa-fill-drip"></i></div><h3>Watercolor & Acrylic</h3><p>Master color theory, blending, and professional painting techniques.</p></div>
+                <div class="class-card"><div class="class-icon"><i class="fas fa-child"></i></div><h3>Kids Art Club</h3><p>Fun, creative sessions for age 5-12, building motor skills & imagination.</p></div>
+                <div class="class-card"><div class="class-icon"><i class="fas fa-graduation-cap"></i></div><h3>Portfolio Prep</h3><p>For design schools, NID/NIFT aspirants and competitive exams.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery-section" style="background: #FFF9EF;">
+        <div class="container">
+            <div class="section-title">Studio <span style="color:#C6A43F;">Moments & Artworks</span></div>
+            <div class="gold-underline"></div>
+            <div class="section-sub">Real glimpses of our classes, student creations, and the artistic journey at Morya Drawing Classes</div>
+            <div class="gallery-grid" id="dynamicGallery"></div>
+            <div class="view-all-maps" style="text-align: center; margin-top: 40px;">
+                <a href="https://maps.app.goo.gl/MmZ3Y4mcgESKrCEXA" target="_blank" class="btn-maps-gallery" style="background: transparent; border: 2px solid var(--gold); padding: 12px 32px; border-radius: 50px; font-weight: 600; display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: #2C2826;">
+                    <i class="fab fa-google"></i> View All Photos on Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews">
+        <div class="container">
+            <div class="section-title">What Students & Parents Say</div>
+            <div class="gold-underline"></div>
+            <div class="reviews-slider">
+                <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Vipul sir is very good art teacher. He teaches children in a very friendly manner. My daughter's progress has been remarkable!"</p><div class="reviewer">— Saylee Kanitkar <span style="color:#C6A43F;">★ Local Guide</span></div></div>
+                <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Vipul sir is very artistic person; his teaching style was amazing. I've learned advanced techniques I never thought possible."</p><div class="reviewer">— Babar Sayyed</div></div>
+                <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Sir is having great experience in his subject. Definitely giving good knowledge to our children. Best of luck to the team!"</p><div class="reviewer">— Mahi Sherekar</div></div>
+                <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"The environment is inspiring. Morya classes transformed my hobby into a real skill. Highly recommend for anyone in Pune."</p><div class="reviewer">— Rajashri Deshpande</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section class="location-section" id="contact">
+        <div class="container">
+            <div class="section-title">Visit Our <span style="color:#C6A43F;">Art Studio</span></div>
+            <div class="location-flex">
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt" style="font-size: 54px; color: #C6A43F; margin-bottom: 10px;"></i>
+                        <p style="font-weight: 600; text-align: center; max-width: 80%;">📍 Shridharnagar, near Dhekne hospital, opp. Elpro School, Chinchwad Gaon, Pune 411033</p>
+                        <a href="https://maps.google.com/?q=Shridharnagar+near+dhekne+hospital+opp+elpro+school+Chinchwad+Gaon+Pune" target="_blank" class="direction-link" style="background: #1E1A17; color: white; margin-top: 15px;"><i class="fas fa-directions"></i> Open Google Maps</a>
+                    </div>
+                </div>
+                <div class="address-details">
+                    <h3><i class="fas fa-location-dot" style="color:#C6A43F;"></i> Studio Address</h3>
+                    <p style="margin: 16px 0; font-size: 1.1rem;">Opposite Elpro School, Near Dhekne Hospital, Shridharnagar, Chinchwad Gaon, Pimpri-Chinchwad, Maharashtra 411033</p>
+                    <p><i class="fas fa-clock"></i> <strong>Classes Timing:</strong> <br> Tue–Sun: 5:00 PM – 8:30 PM (Mon Closed)</p>
+                    <p><i class="fas fa-phone"></i> <strong>Call/WhatsApp:</strong> +91 9822012345</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px;">
+                        <a href="https://wa.me/919822012345?text=I'm%20interested%20in%20art%20classes" class="direction-link" style="background: #25D366; color: white;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+                        <a href="https://maps.app.goo.gl/MmZ3Y4mcgESKrCEXA" target="_blank" class="direction-link" style="background: #C6A43F; color:#1E1A17;"><i class="fas fa-camera"></i> Google Photos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <div class="container" style="margin-bottom: -40px;">
+        <div class="cta-banner">
+            <h2>Enroll for a Free Demo Class</h2>
+            <p style="max-width: 600px; margin: 0 auto; opacity: 0.9;">Limited seats per batch. Meet Vipul Sir personally and experience the Morya difference.</p>
+            <a href="#contact" class="btn-cta">Claim Your Demo →</a>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <section>
+        <div class="container">
+            <div class="section-title">Get In Touch</div>
+            <div class="gold-underline"></div>
+            <div style="max-width: 700px; margin: 0 auto; background: white; padding: 38px; border-radius: 42px; box-shadow: var(--shadow-sm);">
+                <form action="#" method="post">
+                    <input type="text" placeholder="Full Name" style="width:100%; margin-bottom: 18px; padding: 14px 20px; border-radius: 70px; border: 1px solid #E2D3C0; outline: none;">
+                    <input type="tel" placeholder="Phone Number" style="width:100%; margin-bottom: 18px; padding: 14px 20px; border-radius: 70px; border: 1px solid #E2D3C0;">
+                    <input type="email" placeholder="Email (Optional)" style="width:100%; margin-bottom: 18px; padding: 14px 20px; border-radius: 70px; border: 1px solid #E2D3C0;">
+                    <select style="width:100%; margin-bottom: 22px; padding: 14px 20px; border-radius: 70px; border: 1px solid #E2D3C0; background: white;">
+                        <option>Select Course</option>
+                        <option>Foundation Drawing</option>
+                        <option>Watercolor & Acrylic</option>
+                        <option>Kids Art Club</option>
+                        <option>Portfolio Prep</option>
+                    </select>
+                    <button type="submit" style="background: #C6A43F; width: 100%; padding: 14px; border-radius: 44px; font-weight: bold; border: none; color: #1E1A17; font-size: 1rem; cursor: pointer;">Send Inquiry →</button>
+                </form>
+                <p style="text-align: center; margin-top: 20px; font-size: 0.8rem;">We'll contact you within 2 hours. ⚡</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <h3>Morya Drawing Classes</h3>
+                <p>by Vipul Swami Arts</p>
+                <p style="margin-top: 12px;"><i class="fas fa-map-pin"></i> Chinchwad, Pune</p>
+            </div>
+            <div>
+                <h4 style="color: #E4C87B;">Quick Links</h4>
+                <p><a href="#about" style="color:#CCC4B8; text-decoration:none;">About Vipul Sir</a></p>
+                <p><a href="#classes" style="color:#CCC4B8; text-decoration:none;">Programs</a></p>
+                <p><a href="#gallery-section" style="color:#CCC4B8; text-decoration:none;">Gallery</a></p>
+            </div>
+            <div>
+                <h4 style="color: #E4C87B;">Follow Us</h4>
+                <div class="footer-social">
+                    <a href="#" id="youtubeFooter" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" id="instagramFooter" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" id="facebookFooter" target="_blank"><i class="fab fa-facebook"></i></a>
+                </div>
+                <p style="margin-top: 15px;">Email: vipulswamiarts@morya.com</p>
+            </div>
+        </div>
+        <div class="copyright">© 2025 Morya Drawing & Painting Classes — nurturing creativity, one stroke at a time. All rights reserved.</div>
+    </div>
+</footer>
+
+<a href="https://wa.me/919822012345?text=Hello%20Vipul%20Sir,%20I'm%20interested%20in%20art%20classes" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+    // ============= REPLACE THESE WITH YOUR ACTUAL SOCIAL MEDIA URLs =============
+    const SOCIAL_LINKS = {
+        youtube: "https://youtube.com/@VipulSwamiArts",      // ← PASTE YOUR YOUTUBE URL HERE
+        instagram: "https://www.instagram.com/vipul_swami_arts/",   // ← PASTE YOUR INSTAGRAM URL HERE
+        facebook: "https://www.facebook.com/p/Vipul-Swami-100068223471103/"      // ← PASTE YOUR FACEBOOK URL HERE
+    };
+    // ===========================================================================
+
+    // Apply social links to all buttons
+    document.querySelectorAll('#youtubeNav, #youtubeCard, #youtubeFooter').forEach(el => {
+        if(el) el.href = SOCIAL_LINKS.youtube;
+    });
+    document.querySelectorAll('#instagramNav, #instagramCard, #instagramFooter').forEach(el => {
+        if(el) el.href = SOCIAL_LINKS.instagram;
+    });
+    document.querySelectorAll('#facebookNav, #facebookCard, #facebookFooter').forEach(el => {
+        if(el) el.href = SOCIAL_LINKS.facebook;
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === "#" || href === "") return;
+            const targetElement = document.querySelector(href);
+            if (targetElement && href !== '#') {
+                e.preventDefault();
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Gallery images
+    const artImages = [
+        { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1xfqoMVumuBUTT8Fd44z-TDhwN8_4xkkoVA&s", label: "Student at work" },
+        { src: "https://i.ytimg.com/vi/3ttjOqbKtko/oar2.jpg?sqp=-oaymwEYCJgDENAFSFqQAgHyq4qpAwcIARUAAIhC&rs=AOn4CLA2FX6GPX3g2QLlmU45yNWWHc6z2w&usqp=CCk", alt: "Watercolor painting", label: "Watercolor session", mapLink: "https://maps.app.goo.gl/Yo9GWohBwtGUzUHH7" },
+        { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS9OwVcOcUNtkL3yUVS2MMo6t4QaB5xg1Rzw&s", alt: "Children drawing class", label: "Kids Art Club", mapLink: "https://maps.app.goo.gl/X9chknwKxC7WHY4v9" },
+        { src: "https://lh3.googleusercontent.com/p/AF1QipOrVhEZOhQscr8oynqIkeVRsLlWq-WNQaBQqBec=w243-h304-n-k-no-nu", alt: "Art teacher guiding", label: "Vipul Sir mentoring", mapLink: "https://maps.app.goo.gl/2rYMy8zDHML6hEey5" },
+        { src: "https://lh3.googleusercontent.com/p/AF1QipPb6c-QflYMeF_NTJ7UpScf74tBkqpFQveb0tmy=w243-h406-n-k-no-nu", alt: "Still life drawing", label: "Foundation class", mapLink: "https://maps.app.goo.gl/F8nydh1VZ61AgW8t6" },
+        { src: "https://lh3.googleusercontent.com/p/AF1QipNa2f-hgGu1KpR7vfIbWCaRrUcEhG8n07Nanpfk=w243-h174-n-k-no-nu", alt: "Vibrant painting", label: "Acrylic masterclass", mapLink: "https://maps.app.goo.gl/7SnGYdwMh5RSG3646" },
+        { src: "https://lh3.googleusercontent.com/p/AF1QipMDtsb4RSBY9B0rABAlkWoFLuYX-aAPQPeg1lhK=w243-h406-n-k-no-nu", alt: "Student artwork showcase", label: "Student gallery", mapLink: "https://maps.app.goo.gl/FJ6jXA732WRXnFtv5" },
+        { src: "https://lh3.googleusercontent.com/p/AF1QipMaaAkYIpp_nL4AsXcNGx3XdzNCuRm0szM5u230=s1360-w1360-h1020-rw", alt: "Ink and brush", label: "Traditional art", mapLink: "https://maps.app.goo.gl/MmZ3Y4mcgESKrCEXA" }
+    ];
+
+    function buildGallery() {
+        if (!galleryContainer) return;
+        galleryContainer.innerHTML = '';
+        artImages.forEach((img) => {
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item';
+            galleryItem.onclick = () => window.open(img.mapLink, '_blank');
+            const imageElement = document.createElement('img');
+            imageElement.src = img.src;
+            imageElement.alt = img.alt;
+            imageElement.loading = 'lazy';
+            const overlay = document.createElement('div');
+            overlay.className = 'gallery-overlay';
+            overlay.innerHTML = `<span class="maps-link-badge"><i class="fab fa-google"></i> ${img.label}</span>`;
+            galleryItem.appendChild(imageElement);
+            galleryItem.appendChild(overlay);
+            galleryContainer.appendChild(galleryItem);
+        });
+    }
+    buildGallery();
+</script>
+</body>
+</html>
